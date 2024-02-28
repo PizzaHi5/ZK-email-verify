@@ -1,0 +1,12 @@
+{
+  "name": "blackbyrd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@zk-email/circuits": "3.2.0",
+    "@zk-email/contracts": "5.0.2",
+    "@zk-email/helpers": "^3.1.3",
+    "circomlib": "^2.0.5"
+  }
+}

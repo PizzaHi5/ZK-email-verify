@@ -1,0 +1,63 @@
+Delivered-To: pizzahi5@gmail.com
+Received: by 2002:a05:7300:2491:b0:108:f77b:bbcd with SMTP id q17csp2572521dyi;
+        Mon, 26 Feb 2024 17:05:40 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IESu/J1zOedeZxeN0eiCcTc79aHamhDiJAacvPpMsElb7wejD0qcQwI9q8nAyGxbeRcXPvM
+X-Received: by 2002:a05:6102:2388:b0:471:c518:eca0 with SMTP id v8-20020a056102238800b00471c518eca0mr6051728vsr.34.1708995939862;
+        Mon, 26 Feb 2024 17:05:39 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1708995939; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Cu6Cx6GRRpXdyuPhZfOnsM/K49FiOAQ+ips40cg2IjH2IhkBJIsK6OBNF4vPfHixIL
+         ZjLO1ZqBkaIOLilj6VjAwDEJLI+1pLhnAxXVVtqlUUOMN2+UV2EfAIQ1BQUNJYsKWef9
+         xF29pAlLzgogkdtnCBwKYyfDh3zOha5v+BCyznKGVbemMSyuKVeMXRk1kTGhNW7tuCxZ
+         qBsMlUZ1nEAKNhBSgi/pkiB99a5dRfY0F1Umjs19gKm8mKbXAhdwKbA4Ri6EsVxz5o9L
+         JAQyCEvU5p08gCUaHTVNbmXqETCIGZJQX0GNytz7JwK1r5rh2wynXqUAcZURDnKstsVV
+         O6Uw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:to:message-id:subject:from:date
+         :mime-version:dkim-signature:dkim-signature;
+        bh=wSO6lLOaYUJAt2tVBRNqBytJQHoJ541Lyjg9TqJm+lc=;
+        fh=WLlFU2Nt33OXtVsYmLqo0+dZnZseuQSxf5ieQfSZU/4=;
+        b=FA4lfZVanB2Oe2ZA/rinXiaBH+yURojToaV6V+o4yza3rua5T86hJiTEwYAZWDLWoc
+         BMnLdDL2j0/4hISmCWNH9sEaSjT50pb3bIwcn5r1KzIID2n6Uf4pLNCupym5UesIA/bU
+         dNaVQ7ok//WK9ubDRFbLbNxAECt+PJ1n1xV7nZZcIB+PIlwp3hCAvk6mGUH8oiuvP6o0
+         Ct8Qq1hXRFdBphC5IoPCHfde1mI1NX9jeScIEJZjxP+dbvy4+8x14pru07WWKRKkH/xJ
+         OI2uL4PNW5hBijZ2bApTDA88gvaNQBEEErGO7vNCylP9sJ91PlmWP285gO5ygcanMxnv
+         Xe/g==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@blackbyrd.email header.s=s1 header.b=qxhpox2i;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=hWiqsyln;
+       spf=pass (google.com: domain of bounces+39689811-3b70-pizzahi5=gmail.com@em3337.blackbyrd.email designates 149.72.123.24 as permitted sender) smtp.mailfrom="bounces+39689811-3b70-pizzahi5=gmail.com@em3337.blackbyrd.email";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=blackbyrd.email
+Return-Path: <bounces+39689811-3b70-pizzahi5=gmail.com@em3337.blackbyrd.email>
+Received: from s.wrqvtbkv.outbound-mail.sendgrid.net (s.wrqvtbkv.outbound-mail.sendgrid.net. [149.72.123.24])
+        by mx.google.com with ESMTPS id g10-20020ac85d4a000000b0042e8ce11117si2456393qtx.136.2024.02.26.17.05.39
+        for <pizzahi5@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 26 Feb 2024 17:05:39 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+39689811-3b70-pizzahi5=gmail.com@em3337.blackbyrd.email designates 149.72.123.24 as permitted sender) client-ip=149.72.123.24;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@blackbyrd.email header.s=s1 header.b=qxhpox2i;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=hWiqsyln;
+       spf=pass (google.com: domain of bounces+39689811-3b70-pizzahi5=gmail.com@em3337.blackbyrd.email designates 149.72.123.24 as permitted sender) smtp.mailfrom="bounces+39689811-3b70-pizzahi5=gmail.com@em3337.blackbyrd.email";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=blackbyrd.email
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=blackbyrd.email; h=mime-version:from:subject:x-feedback-id:to:content-type: content-transfer-encoding:cc:content-type:from:subject:to; s=s1; bh=wSO6lLOaYUJAt2tVBRNqBytJQHoJ541Lyjg9TqJm+lc=; b=qxhpox2i1mfib+F1PAZQiO4zH40aWGDcQGCh0VPqnAC0/rgUkA6lSqJzVB/kKmTXws4c 2NbG3HGw3ltHL93d6yeTvXy4/lspGjXRcwCy5nmC9GMKg/6mWitfAw0+UzgT6FkbFLUDDA LGziuxOzAFZza01UceQEtubayVi3v1wyTMZC8qEwZNXvOwwnRFJBO5r28QfDcd0BheGl2V bGnbDqW7xcShg1WQZZGDBa2zaP5+5QCFBO+9A1o0XxOTVwac5asMvtDoPNMLpk5DDnXmRr BM9Ds1OOZ1Lz9jVYMHIyS3eaIwXl9nLum4+Z7MMwR4NEmogs010DtkG4W55IBvLA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info; h=mime-version:from:subject:x-feedback-id:to:content-type: content-transfer-encoding:cc:content-type:from:subject:to; s=smtpapi; bh=wSO6lLOaYUJAt2tVBRNqBytJQHoJ541Lyjg9TqJm+lc=; b=hWiqsylnO10Ssotpj8CRl/8G01950WiRIOySxsOThPxSUaDK1job5UVmNhzYOj4tqWm+ 6MqrHrT6Rtf2UvI3KcCII94iTUcKlPsdK/dVuOiiXD99WgCQhaLQHZMWaq191kpq4/rY5z QwCtRyVa7nAj8J1l0PvOVM9EYubUxPA2g=
+Received: by filterdrecv-58bfc74dd6-gwqf5 with SMTP id filterdrecv-58bfc74dd6-gwqf5-1-65DD3563-2
+        2024-02-27 01:05:39.165181184 +0000 UTC m=+2803732.729046253
+Received: from mail.blackbyrd.email (unknown) by geopod-ismtpd-7 (SG) with ESMTP id W6VfDb56TzCeSxDCCh6duw for <pizzahi5@gmail.com>; Tue, 27 Feb 2024 01:05:38.990 +0000 (UTC)
+Received: from mail.blackbyrd.email (www.blackbyrd.email [127.0.0.1]) (Authenticated sender: admin@blackbyrd.email) by mail.blackbyrd.email (Postfix) with ESMTPSA id 7A7C1C7B80 for <pizzahi5@gmail.com>; Tue, 27 Feb 2024 01:05:38 +0000 (UTC)
+MIME-Version: 1.0
+Date: Tue, 27 Feb 2024 01:05:39 +0000 (UTC)
+From: admin@blackbyrd.email
+Subject: This is a test
+Message-ID: <4a76b50e965963fa9f21fdbf184e776a@blackbyrd.email>
+X-Sender: admin@blackbyrd.email
+X-Feedback-ID: 39689811:SG
+X-SG-EID: /xOaWYn8pLZy81Rj2L6S1xpatlvZpwHtIh8NZM8gt76DqUCgOKi9NyeT/fozELrJuI+9dfLzOGZ/JnnMlaqTSkjpZbhe8SgglfjmUe6+3NgcWu93CegVyr+jJbJFJZ9fmT/5NaXl1bcX9JabPPNIyDt27W4ZZWlnkwQsQWh63Nvw28ZIho7zpbp3xIRIXyiTDmIoXq4UF1DlY9XRV+YExQ==
+To: pizzahi5@gmail.com
+X-Entity-ID: uSDSQ1QKv1ea6LryURPVQw==
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+
+This is a test of the blackbyrd broadcast system.

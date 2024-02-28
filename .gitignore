@@ -1,0 +1,7 @@
+node_modules/
+
+blackbyrdverifier_cpp/
+blackbyrdverifier_js/
+blackbyrdverifier.r1cs
+blackbyrdverifier.sym
+input.json
