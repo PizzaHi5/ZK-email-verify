@@ -3,6 +3,9 @@
 ## Description
 This repo takes a raw email as input and builds a ZK proof of the DKIM outputting a verifier solidity contract. 
 
+### Motivation
+Email providers are all centrally run entities that use any means necessary to break even/make money on an email service. Data privacy is not allowed. 
+
 # Table of Contents
 [Installation](#installation)
 [Process Begin](#the-process)
@@ -69,8 +72,17 @@ Or generate your own using a publically distributed phase 1. This is an [example
 This is a CPU expensive operation. Has taken my laptops +2hrs to start a 4 mil constraint phase 1. 
 
 ### Contribute to phase 2
+```
+snarkjs zkey new pot22_final.ptau twitterverifier.wasm twitter_0000.zkey
+```
+```
+snarkjs zkey contribute twitter_0000.zkey twitter_0001.zkey --name='1st Contributor Name' -v
+```
 
 ### Apply the final beacon
+```
+snarkjs zkey beacon twitter_0001.zkey twitter_final.zkey 0102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f 10 -n='Final Beacon'
+```
 
 ### Export the verification key
 ```
