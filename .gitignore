@@ -4,6 +4,7 @@ blackbyrdverifier_cpp/
 blackbyrdverifier_js/
 blackbyrdverifier.r1cs
 blackbyrdverifier.sym
+blackbyrdverifier_0000.zkey
 input.json
 proving/*
 witness.wtns

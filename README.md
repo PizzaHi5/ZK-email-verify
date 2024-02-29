@@ -24,7 +24,7 @@ yarn init -y
 ```
 
 ```
-yarn add @zk-email/circuits @zk-email/helpers @zk-email/contracts @circomlib
+yarn add @zk-email/circuits @zk-email/helpers @zk-email/contracts
 ```
 
 # The Process
@@ -67,25 +67,41 @@ Fetch finalized powersofTau versions based on your circuit contraints [here](htt
 Or generate your own using a publically distributed phase 1. This is an [example](https://github.com/avvydomains/powers-of-tau)
 
 ### Prepare for phase 2
-```snarkjs powersoftau prepare phase2 powersOfTau28_hez_final_22.ptau pot22_final.ptau -v```
+```
+snarkjs powersoftau prepare phase2 powersOfTau28_hez_final_22.ptau pot22_final.ptau -v
+```
 
-This is a CPU expensive operation. Has taken my laptops +2hrs to start a 4 mil constraint phase 1. 
+This is a CPU expensive operation. Has taken my laptops +8hrs to start a 4 mil constraint phase 2. 
 
 ### Contribute to phase 2
+This step differs from the guide. I got error saying the .wasm was an incorrect input parameter. I used the command below to generate our first zkey.
 ```
-snarkjs zkey new pot22_final.ptau twitterverifier.wasm twitter_0000.zkey
+snarkjs groth16 setup blackbyrdverifier.r1cs proving/pot22_final.ptau blackbyrdverifier_0000.zkey
 ```
+
+For production applications, make sure you add your own contribution to the trusted setup phase 2!
+
 ```
-snarkjs zkey contribute twitter_0000.zkey twitter_0001.zkey --name='1st Contributor Name' -v
+snarkjs zkey contribute blackbyrdverifier_0000.zkey blackbyrdverifier_0001.zkey --name='1st Contributor Name' -v
 ```
 
 ### Apply the final beacon
+Add the final beacon to the contributed phase 2 setup zkey. This will finalize phase 2!
+
 ```
-snarkjs zkey beacon twitter_0001.zkey twitter_final.zkey 0102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f 10 -n='Final Beacon'
+snarkjs zkey beacon blackbyrdverifier_0000.zkey blackbyrd_final.zkey 0102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f 10 -n="Final Beacon phase2"
 ```
 
 ### Export the verification key
+Generate the verification key as input for verification
+
 ```
-snarkjs zkey export solidityverifier circuit_final.zkey verifier.sol
+snarkjs zkey export verificationkey blackbyrd_final.zkey
+```
+
+Generate the solidity contract to deploy on-chain!
+
+```
+snarkjs zkey export solidityverifier blackbyrd_final.zkey verifier.sol
 ```
 
